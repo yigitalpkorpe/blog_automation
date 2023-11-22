@@ -1,0 +1,4 @@
+.env
+env-blog/
+*php
+__pycache__
