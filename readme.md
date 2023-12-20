@@ -1,7 +1,7 @@
 # Automated Blog Post Generator
 
 ## Overview
-This Python script automates the creation of SEO-optimized blog posts for digital marketing and advertising topics. It leverages OpenAI's GPT models, extracts blog topics from a sitemap, and fetches relevant images from Unsplash. For a detailed blog post about this project, visit https://about.yigitalpkorpe.com/projects/blog-automation.html
+This Python script automates the creation of SEO-optimized blog posts for digital marketing and advertising topics. It leverages OpenAI's GPT models, extracts blog topics from a sitemap, and fetches relevant images from Unsplash. For a detailed blog post about this project, visit [https://about.yigitalpkorpe.com/projects/blog-automation.html](https://about.yigitalpkorpe.com/projects/blog-automation.html)
 
 If you have any questions or inquiries about this project, feel free to email me at yigitalp@yigitalpkorpe.com
 
