@@ -14,6 +14,8 @@ load_dotenv()
 client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"),)
 sitemap_url = os.environ.get("SITEMAP")
 template = os.environ.get("TEMPLATE")
+top_part = os.environ.get("top_part")
+bottom_part = os.environ.get("bottom_part")
 
 def write_blog(prompt):
     completion = client.chat.completions.create(
@@ -48,7 +50,7 @@ def fetch_h1_from_url(url):
 
 
 def generate_prompt_with_urls(urls):
-    prompt = "Please generate a blog post following the provided guidelines. The post should be informative and relevant to users interested in online advertising and ad design. Avoid repeating topics covered in existing blog posts. The content should fit into the provided HTML template and include a catchy title, introduction, main content with subtitles, and a conclusion. Provide a compelling image link and alt text appropriate for the topic. Fill in the content within this HTML template:" + template + ". Return just the html code. Blog post word count should be long at least 1000 words. Exclude the following blog post titles:"
+    prompt = "Please generate a blog post following the provided guidelines. The post should be informative and relevant to users interested in online advertising and ad design. Avoid repeating topics covered in existing blog posts. The content should fit into the provided HTML template and include a catchy title, introduction, main content with subtitles, and a conclusion. Provide a compelling image link and alt text appropriate for the topic. Fill in the content within this HTML template:" + template + ". Return just the html code. Blog post word count should be long at least 2500 words and it should be detailed for experts. Exclude the following blog post titles:"
     prompt += ", ".join(urls)
     return prompt
 
@@ -60,7 +62,7 @@ def slugify(title):
 def save_as_php(content, slug):
     filename = f"{slug}.php"
     with open(filename, 'w') as file:
-        file.write(content)
+        file.write(top_part+content+bottom_part)
     print(f"Blog saved as {filename}")
 
 
